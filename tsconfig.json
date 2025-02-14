@@ -9,7 +9,7 @@
     "declaration": true,
     "outDir": "dist",
     "skipLibCheck": true,
-    "types": ["@testing-library/jest-dom", "./src/setupTests"]
+    "types": ["@testing-library/jest-dom"]
   },
-  "include": ["src"]
+  "include": ["src", "src/declarations.d.ts"]
 }

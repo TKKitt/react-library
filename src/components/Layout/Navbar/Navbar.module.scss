@@ -1,0 +1,110 @@
+@import '../../../global.scss';
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color, var(--default-color-background)); // If the user provides a primary color, use it, otherwise use the default primary color
+    color: var(--text-color, var(--default-color-text));
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+        margin-bottom: 1rem;
+        justify-content: center;
+        width: 100%
+    }
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    font-size: 1.2rem;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+}
+
+.navLink {
+    color: var(--text-color, var(--default-text-color));
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.dropdownLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.dropdownLabel svg {
+    width: 12px;
+    height: 12px;
+}
+
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color, var(--default-color-background));
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+    }
+}
+
+.dropdown.open .dropdownMenu {
+    display: block;
+}
+
+.dropdownMenu li {
+    padding: 0.5rem 1rem;
+
+    .navLink {
+        display: block;
+        width: 100%;
+    }
+}

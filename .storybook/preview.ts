@@ -1,5 +1,4 @@
 import type { Preview } from "@storybook/react";
-import { fn } from "@storybook/test";
 
 const preview: Preview = {
   parameters: {
